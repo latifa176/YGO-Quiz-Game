@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "858233196138",
+    "firebase_url": "https://ygo-quiz-game.firebaseio.com",
+    "project_id": "ygo-quiz-game",
+    "storage_bucket": "ygo-quiz-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858233196138:android:cb8091bcbc86d4e5dfc413",
+        "android_client_info": {
+          "package_name": "com.example.ygoquizgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858233196138-f4gd0kerbanp2ls4uq1b32uffvanhn52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPxcgyrI_H_l4RglWYsYu-NG9yFp5seiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858233196138-f4gd0kerbanp2ls4uq1b32uffvanhn52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
