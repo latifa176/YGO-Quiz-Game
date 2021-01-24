@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">YGO Quiz Game</string>
+    <string name="go_back"><![CDATA[<< Go back]]></string>
 </resources>
