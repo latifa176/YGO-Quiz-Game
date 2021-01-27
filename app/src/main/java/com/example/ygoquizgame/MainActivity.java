@@ -63,6 +63,7 @@ private FirebaseAuth.AuthStateListener authStateListener; //for checking changes
 
                 //When both fields are not empty:
                 if(!(emailInput.isEmpty() && passwordInput.isEmpty())){
+                    Toast.makeText(MainActivity.this, "Signing in...", Toast.LENGTH_SHORT).show();
                     mAuth.signInWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -96,5 +97,10 @@ private FirebaseAuth.AuthStateListener authStateListener; //for checking changes
     protected void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Do nothing when back is pressed from the sign in activity
     }
 }

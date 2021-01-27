@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/signOutItem"
+        android:icon="@drawable/signout"
+        android:title="Sign out"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/friendsListItem"
+        android:icon="@drawable/friends"
+        android:title="Friends list"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/duelistProfileItem"
+        android:icon="@drawable/profile"
+        android:title="Duelist profile"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/bgm"
+        android:icon="@drawable/bgm"
+        android:title="BGM"
+        app:showAsAction="always" />
+</menu>

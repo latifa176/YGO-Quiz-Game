@@ -49,27 +49,27 @@ public class SignUp extends AppCompatActivity {
                                                 if (nameInput.isEmpty()) {
                                                     duelistName.setError("Please enter your name");
                                                     duelistName.requestFocus();
-                                                    return;//?
+                                                    return;
                                                 }
                                                 if (emailInput.isEmpty()) {
                                                     email.setError("Please enter your email");
                                                     email.requestFocus();
-                                                    return;//?
+                                                    return;
                                                 }
                                                 if (!isValidEmail(emailInput)) {
                                                     email.setError("Please enter a valid email");
                                                     email.requestFocus();
-                                                    return;//?
+                                                    return;
                                                 }
                                                 if (passwordInput.isEmpty() || passwordInput.length() < 6) {
                                                     password.setError("Please enter a password that is longer than 6 characters");
                                                     password.requestFocus();
-                                                    return;//?
+                                                    return;
                                                 }
                                                 if (!passwordInput2.equals(passwordInput)) {
                                                     password2.setError("Please enter an identical password");
                                                     password2.requestFocus();
-                                                    return;//?
+                                                    return;
                                                 }
                                                 Toast.makeText(SignUp.this, "Creating account...", Toast.LENGTH_SHORT).show();
                                                 mAuth.createUserWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
@@ -101,4 +101,9 @@ public class SignUp extends AppCompatActivity {
         String regex="^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return email.matches(regex);
         }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(SignUp.this,MainActivity.class));
     }
+}
