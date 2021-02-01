@@ -7,21 +7,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
 import com.google.firebase.auth.*;
-import com.google.firebase.storage.*;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
 
 public class SignUp extends AppCompatActivity {
     EditText duelistName, email, password, password2;
     TextView back;
     Button signUpButton;
     FirebaseAuth mAuth;
-    StorageReference usersDatabase;
+    DatabaseReference db;
     String nameInput, emailInput, passwordInput, passwordInput2;
 
     @Override
@@ -35,7 +35,7 @@ public class SignUp extends AppCompatActivity {
         back=findViewById(R.id.back);
         signUpButton=findViewById(R.id.signUpButton);
         mAuth=FirebaseAuth.getInstance();
-        usersDatabase=FirebaseStorage.getInstance().getReference().child("Users");
+        db = FirebaseDatabase.getInstance().getReference().child("users");
 
         //sign up button event listener
         signUpButton.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +78,11 @@ public class SignUp extends AppCompatActivity {
                                                         if (!task.isSuccessful()) {
                                                             Toast.makeText(SignUp.this, "Authentication failed" + task.getException(), Toast.LENGTH_SHORT).show();
                                                         } else {
-                                                            startActivity(new Intent(SignUp.this, MainMenu.class));
+                                                            //Create new user entity in realtime database
+                                                            String id=mAuth.getCurrentUser().getUid();
+                                                            User newUser=new User(nameInput, emailInput, passwordInput);
+                                                            db.child(id).setValue(newUser);
+                                                            startActivity(new Intent(SignUp.this, MainMenu.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
                                                             finish();
                                                         }
                                                     }
@@ -92,6 +96,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 //back to sign in
                 startActivity(new Intent(SignUp.this,MainActivity.class));
+                finish();
             }
         });
 
@@ -104,6 +109,7 @@ public class SignUp extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(SignUp.this,MainActivity.class));
+        startActivity(new Intent(SignUp.this,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP));
+        finish();
     }
 }

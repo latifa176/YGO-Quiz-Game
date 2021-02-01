@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp">
+        <activity android:name=".SignUp" android:noHistory="true">
         </activity>
-        <activity android:name=".MainMenu">
+        <activity android:name=".MainMenu" android:noHistory="true" android:launchMode="singleTop">
+        </activity>
+        <activity android:name=".DuelistProfile" android:noHistory="true">
         </activity>
 
     </application>
