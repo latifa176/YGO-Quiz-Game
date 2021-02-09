@@ -40,7 +40,10 @@ public class User {
     public int getNumOfAnswers(){ return numOfAnswers;}
     public int getNumOfCorrectAnswers(){ return numOfCorrectAnswers;}
     public double getCorrectnessRate(){
-        calculateCorrectnessRate();
+        if(numOfCorrectAnswers==0)
+            correctnessRate=0;
+        else
+            correctnessRate=((double)numOfCorrectAnswers/(double)numOfAnswers)*100;
         return correctnessRate;
     }
     public List<String> getFriendsList(){ return friendsList;}
@@ -61,10 +64,7 @@ public class User {
     public void incrementNumOfCorrectAnswers(){
         numOfCorrectAnswers += 1;
     }
-    public void calculateCorrectnessRate(){
-        if(numOfAnswers!=0)
-            correctnessRate=(numOfCorrectAnswers/numOfAnswers)*100;
-    }
+
     public void addFriend(String friendEmail){
         friendsList.add(friendEmail);
     }

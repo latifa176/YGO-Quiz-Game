@@ -41,6 +41,7 @@ private FirebaseAuth.AuthStateListener authStateListener; //for checking changes
                     //if user is signed in, go to the main menu
                     Intent I = new Intent(MainActivity.this, MainMenu.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(I);
+                    finish();
                 }
             }
         };

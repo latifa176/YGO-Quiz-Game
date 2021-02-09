@@ -38,6 +38,7 @@ public class MainMenu extends AppCompatActivity {
                 mAuth.signOut();
                 Toast.makeText(MainMenu.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainMenu.this, MainActivity.class));
+                finish();
             }
         });
 

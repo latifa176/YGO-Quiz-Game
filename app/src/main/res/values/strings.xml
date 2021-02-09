@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">YGO Quiz Game</string>
     <string name="go_back"><![CDATA[<< Go back]]></string>
+    <string name="deleteAccountDialogTitle">Delete Account</string>
+    <string name="deleteAccountDialogMsg">All data stored for this account will be lost. Are you sure you want to delete your account?</string>
+    <string name="dialogYes">Yes</string>
+    <string name="dialogCancel">Cancel</string>
+    <string name="resetDataDialogTitle">Reset Answers Data</string>
+    <string name="resetDataDialogMsg">All quiz answers data will be reset and displayed as zeroes. Are you sure you want to proceed?</string>
+    <string name="RemoveProfilePicDialogTitle">Remove Profile Picture</string>
+    <string name="RemoveProfilePicDialogMsg">Are you sure you want to remove your profile picture?</string>
 
 </resources>
